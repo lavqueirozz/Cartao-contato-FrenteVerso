@@ -1,0 +1,103 @@
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins", sans-serif;
+}
+
+html,body{
+    display:grid;
+    height:100%;
+    place-items: center;
+    background:linear-gradient(375deg, #1cc7d0, #2ede98);
+}
+::selection{
+    color:#fff;
+    background:#1cc7d0;
+}
+
+.container{
+    height:400px;
+    width:320px;
+    position:relative;
+    transform-style:preserve-3d;
+    perspective:1000px;
+    
+}
+
+.container .cartao{
+    position:absolute;
+    height:100%;
+    width: 100%;
+    padding:5px;
+    background:#fff;
+    border-radius:10px;
+    transform:translateY(0deg);
+    backface-visibility:hidden;
+    box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+    transition: transform 0.7s cubic-bezier(0.4,0.2,0.2,1);
+}
+
+.container:hover > .frente{
+    transform:rotateY(-180deg);
+}
+
+.container .cartao img{
+    height:100%;
+    width:100%;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.container .verso{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-evenly;
+    transform:rotateY(180deg)
+}
+
+.container:hover > .verso{
+    transform:rotateY(0deg);
+}
+
+.container .verso img{
+    height:150px;
+    width:150px;
+    border-radius:50%;
+    padding: 5px;
+    background: linear-gradient(375deg, #1cc7d0, #2ede98);
+}
+.container .verso .info{
+    text-align:center;
+}
+
+.verso .info .titulo{
+    font-size:30px;
+    font-weight:500;
+}
+.verso ul{
+    display:flex;
+}
+
+.verso ul a{
+    display:block;
+    height:40px;
+    width:40px;
+    background: linear-gradient(375deg, #1cc7d0, #2ede98);
+    text-align:center;
+    border: 2px solid transparent;
+    line-height:38px;
+    margin: 0 5px;
+    border-radius:50%;
+    color:#fff;
+}
+
+.verso ul a:hover{
+    background:none;
+    color: #1cc7d0;
+    border-color: #1cc7d0;
+}
+
